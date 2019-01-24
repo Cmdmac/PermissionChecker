@@ -52,11 +52,27 @@ public class PermissionChecker {
         PermissionChecker build();
     }
 
+    public static class BuilderMulti implements IBuilder {
+        AppCompatActivity activity;
+        String requestTitle = "";
+        String requestMessage = "";
+        String[] permissions;
+
+        public BuilderMulti permissions(String[] permissions, String title, String message) {
+            this.permissions = permissions;
+            return this;
+        }
+
+        @Override
+        public PermissionChecker build() {
+            return null;
+        }
+    }
+
     public static class Builder implements IBuilder {
         AppCompatActivity activity;
         ArrayList<Config> configs;
-        String requestTitle = "";
-        String requestMessage = "";
+
         String requestOpenSettingMessage = "";
         Callback callback;
         AllowCallback allowCallback;
@@ -71,6 +87,8 @@ public class PermissionChecker {
             this.configs.add(new Config(permission, title, message));
             return this;
         }
+
+
 
 //        public Builder requestTitle(String title) {
 //            this.requestTitle = title;
@@ -167,7 +185,7 @@ public class PermissionChecker {
 //        void onDeny(String permission);
     }
 
-    public static interface AllowCallback {
+    public interface AllowCallback {
         void onAllow(String permission);
     }
 
