@@ -1,5 +1,5 @@
 # PermissionChecker
-Android动态权限申请库
+Android动态权限申请库，支持多个权限不同的提示语，可以根据自己的需求进行定制
 
 ## 使用示例
 ```
