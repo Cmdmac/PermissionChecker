@@ -12,9 +12,9 @@ PermissionChecker.with(this)
                 Toast.makeText(MainActivity.this, "allow", Toast.LENGTH_SHORT).show();
             }
         }).onDeny(new PermissionChecker.DenyCallback() {
-    @Override
-    public void onDeny(String permission) {
-        Toast.makeText(MainActivity.this, "deny", Toast.LENGTH_SHORT).show();
-    }
+            @Override
+            public void onDeny(String permission) {
+                Toast.makeText(MainActivity.this, "deny", Toast.LENGTH_SHORT).show();
+            }
 }).build().check();
 ```
